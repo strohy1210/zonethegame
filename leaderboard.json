@@ -1,0 +1,29 @@
+{
+  "users": {
+    "user-1": {
+      "first_name": "Sarah",
+      "score": 23,
+      "device-id": 12
+    },
+    "user-2": {
+      "first_name": "James",
+      "score": 194,
+      "device-id": 13
+    },
+    "user-3": {
+      "first_name": "Olga",
+      "score": 98,
+      "device-id": 14
+    },
+    "user-4": {
+      "first_name": "Dave",
+      "score": 142,
+      "device-id": 15
+    },
+    "user-5": {
+      "first_name": "Chris",
+      "score": 65,
+      "device-id": 18
+    }
+  }
+}

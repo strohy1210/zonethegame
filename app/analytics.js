@@ -1,26 +1,17 @@
 var ref = new Firebase('https://flickering-fire-1102.firebaseio.com/');
-// var activeUsers = new Firebase('https://airpair-analytics-tutorial.firebaseio.com/activeUsers');
-var activeVisitors = ref.child('activeVisitors');
-activeVisitors.push({
-  path: window.location.pathname,
-  arrivedAt: Firebase.ServerValue.TIMESTAMP,
-  userAgent: navigator.userAgent
-});
+
 
 var usersRef = ref.child("users");
 
-// usersRef.set({
-//   alanisawesome: {
-//     date_of_birth: "June 23, 1912",
-//     full_name: "Alan Turing"
-//   },
-//   gracehop: {
-//     date_of_birth: "December 9, 1906",
-//     full_name: "Grace Hopper"
-//   }
-// });
 
-usersRef.update({
-  "alanisawesome/full_name": "Alan The Machine"
-  "gracehop/full_name": "Amazing Grace"
+usersRef.orderByChild("score").on("value", function(snap) {
+
+  var users = _.values(snap.val());
+  var usersInOrder = _.sortBy( users, 'score' ).reverse();
+  var j=0;
+  for (j; j <= users.length; j++) {       
+    $("tbody").append("<tr><td>" + parseInt(j+1) + ".</td><td>" + usersInOrder[j].first_name + "</td><td>" + usersInOrder[j].score + "</td></tr>");
+  }
+
+
 });
