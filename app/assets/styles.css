@@ -1,0 +1,44 @@
+
+@font-face {
+	font-family: zoneMedium;
+  src: url(Neogrey-z0ne-MediumTTF.ttf);
+}
+
+
+body {
+   background-image: url("leaderboard_BG.jpg");
+   font-family: zoneMedium;
+}
+
+.leaderboard-title {
+	background-color: rgba(0,0,0, 0.5);
+	margin-bottom: 2%;
+	padding-bottom: 1%;
+	padding-top: 1%;
+}
+
+.leaderboard-title img {
+	 height: 40%;
+	 width: auto;
+
+}
+
+#leaderboard {
+	overflow-y: scroll;
+	height:400px;
+	background: rga(0,0,0);
+}
+
+#leaderboard .table {
+	color: #9999cc;
+	overflow-y: scroll;
+	border: 13px solid #bbb;
+	background: #101025;
+	border-style: ridge;
+	box-shadow: 6px 7px 10px 3px rgba(2, 2, 2, 0.68);
+}
+
+#leaderboard .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+	border: 13px solid #bbb;
+	border-style: ridge;
+}
