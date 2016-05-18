@@ -4,13 +4,21 @@ var ref = new Firebase('https://flickering-fire-1102.firebaseio.com/');
 var usersRef = ref.child("users");
 
 
-usersRef.orderByChild("score").on("value", function(snap) {
+function formatTime(seconds) {
+	var date = new Date(null);
+  date.setSeconds(seconds); // specify value for SECONDS here
+  timedate.toISOString().substr(11, 8).slice(4,8);
+}
+
+debugger;
+
+usersRef.orderByChild("score").on("value", function(snap) {	
 
   var users = _.values(snap.val());
   var usersInOrder = _.sortBy( users, 'score' ).reverse();
   var j=0;
-  for (j; j <= users.length; j++) {       
-    $("tbody").append("<tr><td>" + parseInt(j+1) + ".</td><td>" + usersInOrder[j].first_name + "</td><td>" + usersInOrder[j].score + "</td></tr>");
+  for (j; j <= users.length; j++) {  
+    $("tbody").append("<tr><td align='center'>" + parseInt(j+1) + "</td><td align='center' class='player-icon'> <img src='" + usersInOrder[j].image_url + "'> </td><td>" + usersInOrder[j].first_name + "</td><td>" + usersInOrder[j].score +  "</td><td>" + formatTime(usersInOrder[j].time) + "</td></tr>");
   }
 
 

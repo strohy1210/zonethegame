@@ -2,28 +2,60 @@
   "users": {
     "user-1": {
       "first_name": "Sarah",
-      "score": 23,
-      "device-id": 12
+      "score": 23234,
+      "device-id": 12,
+      "time": 189,
+      "image_url": "http://www.publicdomainpictures.net/pictures/80000/nahled/cartoon-germ-virus-139229352203G.jpg"
     },
     "user-2": {
       "first_name": "James",
-      "score": 194,
-      "device-id": 13
+      "score": 194104,
+      "time": 210,
+      "device-id": 13,
+      "image_url": "http://www.publicdomainpictures.net/pictures/80000/nahled/cartoon-germ-virus-139229352203G.jpg"
     },
     "user-3": {
       "first_name": "Olga",
-      "score": 98,
-      "device-id": 14
+      "score": 98648,
+      "time": 164,
+      "device-id": 14,
+      "image_url": "http://orig11.deviantart.net/f6f5/f/2014/191/7/9/cartoon_illustration_of_a_cute_little_reindeer_by_mischoko-d7q3m7i.jpg"
+
     },
     "user-4": {
       "first_name": "Dave",
-      "score": 142,
-      "device-id": 15
+      "score": 142202,
+      "time": 173,
+      "device-id": 15,
+      "image_url": "http://www.publicdomainpictures.net/pictures/80000/velka/cartoon-orange.jpg"
     },
     "user-5": {
       "first_name": "Chris",
-      "score": 65,
-      "device-id": 18
+      "score": 75745,
+      "time": 191,
+      "device-id": 18,
+      "image_url": "http://www.publicdomainpictures.net/pictures/80000/nahled/cartoon-germ-virus-139229352203G.jpg"
+    },
+    "user-6": {
+      "first_name": "Ray",
+      "score": 65215,
+      "time": 135,
+      "device-id": 10,
+      "image_url": "http://www.publicdomainpictures.net/pictures/80000/nahled/cartoon-germ-virus-139229352203G.jpg"
+    },
+    "user-7": {
+      "first_name": "Alexis",
+      "score": 35025,
+      "time": 164,
+      "device-id": 16,
+      "image_url": "http://www.publicdomainpictures.net/pictures/80000/nahled/cartoon-germ-virus-139229352203G.jpg"
+    },
+    "user-8": {
+      "first_name": "Jason",
+      "score": 15985,
+      "time": 171,
+      "device-id": 28,
+      "image_url": "http://orig11.deviantart.net/f6f5/f/2014/191/7/9/cartoon_illustration_of_a_cute_little_reindeer_by_mischoko-d7q3m7i.jpg"
     }
   }
 }
