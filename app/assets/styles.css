@@ -7,7 +7,7 @@
     background-color: #333;
     width: 30px;
     padding:5px;
-   border-left: 13px solid #333;
+   border-left: 16px solid #555;
     border-left-style: ridge;
 }
  
@@ -16,7 +16,8 @@
     width:15px;
     border-top: none;
     border-bottom: none;
-    border-left: 13px solid #333;
+    border-left: 16px solid #555;
+    /*border-left: 16px solid #333;*/
     border-left-style: ridge;
     margin-top: 5px;
     background-image: -webkit-linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 50%, transparent, transparent);
@@ -24,7 +25,7 @@
 
 
 @font-face {
-	font-family: zoneMedium;
+  font-family: zoneMedium;
   src: url(Neogrey-z0ne-MediumTTF.ttf);
 }
 
@@ -37,48 +38,65 @@ body {
 
 
 .leaderboard-title {
-	background-color: rgba(0,0,0, 0.5);
-	margin-bottom: 2%;
-	padding-bottom: 1%;
-	padding-top: 1%;
+  background-color: rgba(0,0,0, 0.5);
+  margin-bottom: 2%;
+  padding-bottom: 1%;
+  padding-top: 1%;
 }
 
 .leaderboard-title img {
-	 height: 40%;
-	 width: auto;
-	 max-height: 170px;
+   height: 40%;
+   width: auto;
+   max-height: 170px;
 
 }
 
 #leaderboard {
-	max-height:300px;
+  max-height:340px;
   background: #101025;
-	overflow-y: scroll;
-	overflow-x:hidden;
-	padding: 0px;
-  border: 13px solid #555;
+  overflow-y: scroll;
+  overflow-x:hidden;
+  padding: 0px;
+  border: 16px solid #555;
   border-style:ridge;
   box-shadow: 6px 7px 10px 3px rgba(2, 2, 2, 0.68);
 }
 
 #leaderboard .table {
-	color: #9999cc;
-	background: #101025;
-	box-shadow: 6px 7px 10px 3px rgba(2, 2, 2, 0.68);
-	margin:0px;
+  color: #9999cc;
+  background: #101025;
+  box-shadow: 6px 7px 10px 3px rgba(2, 2, 2, 0.68);
+  margin:0px;
 
 }
 
 #leaderboard .table>tbody>tr, .table>tfoot>tr{
-	border-bottom: 13px solid #555;
+  border-bottom: 16px solid #555;
   border-bottom-style: ridge;
 }
 
 
 #leaderboard .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
   border-top: none;
+  /*width: 20%;*/
 }
 
 #leaderboard table tr:last-child {
   border-bottom: none;
 }
+
+#leaderboard tr:nth-child(even) {
+    background-color: #312F47;
+}
+
+#leaderboard .player-icon {
+  width: 20%;
+  /*border-radius: 50px;*/
+}
+
+
+#leaderboard img {
+  width: 25%;
+  border-radius: 50px;
+}
+/*first
