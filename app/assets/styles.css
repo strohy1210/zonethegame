@@ -31,22 +31,23 @@
 
 
 body {
-   background-image: url("leaderboard_BG.jpg");
-   font-family: zoneMedium;
+  background-image: url("leaderboard_BG.jpg");
+  font-family: zoneMedium;
+  background-repeat: repeat-y;
 }
 
 
 .leaderboard-title {
   background-color: rgba(0,0,0, 0.5);
-  margin-bottom: 2%;
+  margin-bottom: 3%;
   padding-bottom: 1%;
-  padding-top: 1%;
+  padding-top: 2%;
 }
 
 .leaderboard-title img {
-   height: 40%;
-   width: auto;
-   max-height: 170px;
+  height: auto;
+  width: 90%;
+  max-height: 170px;
 
 }
 
@@ -97,5 +98,18 @@ body {
 #leaderboard img {
   width: 25%;
   border-radius: 50px;
+}
+
+@media only screen and (max-device-width: 480px) {
+  /* define mobile specific styles come here */
+  #leaderboard {
+    max-height:700px;
+    overflow-y: auto;
+  }
+
+  #leaderboard table {
+    font-size: 22px;
+  }
+
 }
 
