@@ -16,7 +16,7 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-usersRef.orderByChild("score").on("value", function(snap) { 
+usersRef.orderByChild("score").once("value", function(snap) { 
 
 
   var users = _.values(snap.val());
