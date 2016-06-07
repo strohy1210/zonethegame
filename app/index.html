@@ -1,13 +1,28 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles.css">      
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAOMjaCTrkHpwLMyM_jYBC1I6wE7jbFN4s",
+        authDomain: "flickering-fire-1102.firebaseapp.com",
+        databaseURL: "https://flickering-fire-1102.firebaseio.com",
+        storageBucket: "flickering-fire-1102.appspot.com",
+      };
+      firebase.initializeApp(config);
+    </script>
+    <!-- // <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script> -->
+    <script src='assets/analytics.js'></script>
+
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
     <script src="assets/underscore.js"></script>
   </head>
   <body>
-    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-    <script src='assets/analytics.js'></script>
+
+    
+
     <div class="leaderboard-title col-sm-12">
       <img src="assets/leaderboard_logo.png" alt="logo"> 
     </div>
@@ -20,5 +35,19 @@
       </table>
     </div>
     </div>
+
+    
+
+
+    <div class="signup">
+        <h2 class="signup-title">Sign up for beta</h2>
+        <p id="signup-success" class="text-success"></p>
+        <p id="signup-error" class="text-danger"></p>
+        <form class="signup-form form-inline" id="signup-form" role="form" onsubmit="return signup(this)">
+            <input class="form-control" name="email" type="email" placeholder="Your email. eg., joe@acme.com" required>
+            <button class="btn btn-success" id="signup-button" type="submit" >Join now</button>
+        </form>
+    </div>
+
   </body>
 </html>

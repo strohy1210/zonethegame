@@ -1,8 +1,8 @@
 
-var ref = new Firebase('https://flickering-fire-1102.firebaseio.com/');
+// var ref = new Firebase('https://flickering-fire-1102.firebaseio.com/');
 
 
-var usersRef = ref.child("users");
+var usersRef = firebase.database().ref("users");
 
 
 function formatTime(seconds) {
