@@ -1,6 +1,13 @@
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyAOMjaCTrkHpwLMyM_jYBC1I6wE7jbFN4s",
+  authDomain: "flickering-fire-1102.firebaseapp.com",
+  databaseURL: "https://flickering-fire-1102.firebaseio.com",
+  storageBucket: "flickering-fire-1102.appspot.com",
+};
+firebase.initializeApp(config);
 
-// var ref = new Firebase('https://flickering-fire-1102.firebaseio.com/');
-
+// $('#login-signup-page').hide();
 
 var usersRef = firebase.database().ref("users");
 
@@ -28,3 +35,5 @@ usersRef.orderByChild("score").once("value", function(snap) {
   }
 
 });
+
+
