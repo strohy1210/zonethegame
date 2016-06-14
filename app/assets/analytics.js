@@ -7,7 +7,13 @@ var config = {
 };
 firebase.initializeApp(config);
 
-// $('#login-signup-page').hide();
+// var ExampleComponent = React.createClass({
+//   mixins: [ReactFireMixin]
+//   // ...
+// });
+
+
+var user = firebase.auth().currentUser;
 
 var usersRef = firebase.database().ref("users");
 
@@ -36,4 +42,7 @@ usersRef.orderByChild("score").once("value", function(snap) {
 
 });
 
+window.onload = function() {
+  initApp();
+};
 
