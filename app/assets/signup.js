@@ -119,7 +119,7 @@ function initApp() {
     } else {
       // User is signed out.
       // [START_EXCLUDE silent]
-      $("#leaderboard, .leaderboard-title").hide();
+      // $("#leaderboard, .leaderboard-title").hide();
       document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
       document.getElementById('quickstart-sign-in').textContent = 'Sign in';
       document.getElementById('quickstart-account-details').textContent = 'null';

@@ -1,18 +1,21 @@
 // Initialize Firebase
-var config = {
-  apiKey: "AIzaSyAOMjaCTrkHpwLMyM_jYBC1I6wE7jbFN4s",
-  authDomain: "flickering-fire-1102.firebaseapp.com",
-  databaseURL: "https://flickering-fire-1102.firebaseio.com",
-  storageBucket: "flickering-fire-1102.appspot.com",
-};
-firebase.initializeApp(config);
+// var config = {
+//   apiKey: "AIzaSyAOMjaCTrkHpwLMyM_jYBC1I6wE7jbFN4s",
+//   authDomain: "flickering-fire-1102.firebaseapp.com",
+//   databaseURL: "https://flickering-fire-1102.firebaseio.com",
+//   storageBucket: "flickering-fire-1102.appspot.com",
+// };
 
-// var ExampleComponent = React.createClass({
-//   mixins: [ReactFireMixin]
-//   // ...
-// });
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBL2Ch4q1Oi6ex7uvmZlUAo2MFOBwwd0Ow",
+    authDomain: "project-1367028999804294771.firebaseapp.com",
+    databaseURL: "https://project-1367028999804294771.firebaseio.com",
+    storageBucket: "project-1367028999804294771.appspot.com",
+  };
+  firebase.initializeApp(config);
 
-
+    
 var user = firebase.auth().currentUser;
 
 var usersRef = firebase.database().ref("users");
