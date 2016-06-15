@@ -1,1 +1,6 @@
-{}
+{
+  "projects": {
+    "master": "project-1367028999804294771",
+    "default": "project-1367028999804294771"
+  }
+}
