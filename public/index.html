@@ -21,9 +21,9 @@
         <h1>Welcome to z0ne</h1>
         <hr/>
         <h4><strong>Login or register a new account to get started</strong></h4>
-        <div class="row col-md-12 login-btns">
-          <button type="button" class="btn btn-lg btn-default col-xs-6 go-to-signup-btn">Sign up</button>
+        <div class="row col-md-12 login-btns">        
           <button type="button" class="btn btn-lg btn-default col-xs-6 go-to-login-btn">Login</button>
+          <button type="button" class="btn btn-lg btn-default col-xs-6 go-to-signup-btn">Sign up</button>
         </div>
 
       </div>
@@ -50,15 +50,14 @@
                 <h2 class="mdl-card__title-text">Register</h2>
               </div>
               <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                <p>Enter an email, password, and device ID below</p>
+                <p>Enter an email, password below to signup</p>
 
                 <input class="mdl-textfield__input form-control"  type="text" id="email" name="email" placeholder="Email"/>
                 &nbsp;&nbsp;&nbsp;
                 <input class="mdl-textfield__input form-control"  type="password" id="password" name="password" placeholder="Password"/>
-                &nbsp;&nbsp;&nbsp;
-                <input class="mdl-textfield__input form-control"  type="device-id" id="device-id" name="device-id" placeholder="device-id"/>
                 <br/><br/>
-                <button class="mdl-button mdl-js-button mdl-button--raised btn" id="quickstart-sign-up" name="signup">Sign Up</button>
+                <button class="mdl-button mdl-js-button mdl-button--raised btn" id="quickstart-sign-up" name="signup">Sign Up</button></br>
+                <a href="#" class="go-to-login">Login</a>    
 
               </div>
             </div>
@@ -90,15 +89,14 @@
                 <h2 class="mdl-card__title-text">Login</h2>
               </div>
               <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                <p>Enter an email and password below and either sign in to an existing account or sign up</p>
+                <p>Enter an email and password below to sign in</p>
 
                 <input class="mdl-textfield__input form-control" style="display:inline;width:auto;" type="text" id="login-email" name="email" placeholder="Email"/>
                 &nbsp;&nbsp;&nbsp;
                 <input class="mdl-textfield__input form-control" style="display:inline;width:auto;" type="password" id="login-password" name="password" placeholder="Password"/>
                 <br/><br/>
-                <button disabled class="mdl-button mdl-js-button mdl-button--raised btn" id="quickstart-sign-in" name="signin">Sign In</button>
-
-                
+                <button disabled class="mdl-button mdl-js-button mdl-button--raised btn" id="quickstart-sign-in" name="signin">Sign In</button><br>
+                <a href="#" class="go-to-signup">Sign up</a>            
               </div>
             </div>
 

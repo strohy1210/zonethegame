@@ -10,11 +10,8 @@ firebase.initializeApp(config);
 
 var usersRef = firebase.database().ref("users");
 
-function writeUserData(userId, email) {
-  firebase.database().ref('users/' + userId).set({
-    email: email
-  });
-}
+
+var secretCode = "9Op240sK";
 
 function authorizeCode(code) {
   if (code === secretCode) {
@@ -24,8 +21,15 @@ function authorizeCode(code) {
   }
 }
 
-function writeSecondaryUserData(userId, deviceId) {
-  firebase.database().ref('users/' + userId).push({
+// function writeUserData(userId, email) {
+//   firebase.database().ref('users/' + userId).set({
+//     email: email
+//   });
+// }
+
+function writeUserData(userId, deviceId) {
+  firebase.database().ref('users/' + userId).set({
+    email: firebase.auth().currentUser.email,
     deviceId: deviceId,
     codeEntered: true
   });
@@ -33,7 +37,7 @@ function writeSecondaryUserData(userId, deviceId) {
  
 var user = firebase.auth().currentUser;
 
-var secretCode = "9Op240sK";
+
 
 function formatTime(seconds) {
 
