@@ -9,13 +9,13 @@
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/reactfire/1.0.0/reactfire.min.js"></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-    <script src="assets/underscore.js"></script>
+    <script src="assets/scripts/underscore.js"></script>
 
 
   </head>
   <body id="home">
 
-    <div class="signup-or-login col-md-6 col-md-offset-3">
+    <div class="signup-or-login info-box col-md-6 col-md-offset-3">
 
       <div class="dashboard-container col-md-10 col-md-offset-1">
         <h1>Welcome to z0ne</h1>
@@ -30,7 +30,7 @@
     </div>
 
 <!-- /  / / / / / / / / / /  Signup / / / / / / / / / / / / / / / / / -->
-    <div class="signup mdl-layout mdl-js-layout mdl-layout--fixed-header col-md-6 col-md-offset-3">
+    <div class="signup info-box mdl-layout mdl-js-layout mdl-layout--fixed-header col-md-6 col-md-offset-3">
 
         <!-- Header section containing title -->
         <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
@@ -70,7 +70,7 @@
 <!--  / / / / /   / / / /Login  / / / / / / / / /  -->
 
 
-      <div class="login mdl-layout mdl-js-layout mdl-layout--fixed-header col-md-6 col-md-offset-3">
+      <div class="login info-box  mdl-layout mdl-js-layout mdl-layout--fixed-header col-md-6 col-md-offset-3">
 
         <!-- Header section containing title -->
         <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
@@ -98,8 +98,6 @@
                 <br/><br/>
                 <button disabled class="mdl-button mdl-js-button mdl-button--raised btn" id="quickstart-sign-in" name="signin">Sign In</button>
 
-
-                <!-- Container where we'll display the user details -->
                 
               </div>
             </div>
@@ -108,13 +106,56 @@
         </main>
       </div>
 
-      <div class="quickstart-user-details-container col-md-6 col-md-offset-3">
+
+<!--  / / / / /   / / / /Enter Device ID and Code / / / / / / / / /  -->
+    <div class="post-signup info-box  mdl-layout mdl-js-layout mdl-layout--fixed-header col-md-6 col-md-offset-3">
+
+        <!-- Header section containing title -->
+        <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
+          <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+            <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
+              <a href="/"><h3>z0ne</h3></a>
+            </div>
+          </div>
+        </header>
+
+        <main class="mdl-layout__content mdl-color--grey-100">
+          <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+
+            <!-- Container for the demo -->
+            <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+              <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+                <h2 class="mdl-card__title-text">Device Details</h2>
+              </div>
+              <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                <p>Enter your Device ID and Code (sent via email)</p>
+                <input class="mdl-textfield__input form-control"  type="device-id" id="device-id" name="device-id" placeholder="device-id"/>
+                &nbsp;&nbsp;&nbsp;
+                <input class="mdl-textfield__input form-control"  type="code" id="code" name="code" placeholder="code"/>
+                <br/><br/>
+                <button class="mdl-button mdl-js-button mdl-button--raised btn" id="post-signup-submit" name="submit">Submit</button>
+
+              </div>
+            </div>
+
+          </div>
+        </main>
+      </div>
+
+
+
+<!-- /  / /   / / / / /Container where we'll display the user details / //////////////-->
+
+      <div class="quickstart-user-details-container col-md-6 col-md-offset-3 info-box">
         Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
         <div>Firebase auth <code>currentUser</code> object value:</div>
         <pre><code id="quickstart-account-details">null</code></pre>
       </div>
 
-      <!--  LEADERBOARD -->
+
+
+
+<!--  LEADERBOARD -->
 
 
 
@@ -131,6 +172,6 @@
     </div>
 
   </body>
-  <script src='assets/analytics.js'></script>
-  <script src='assets/signup.js'></script>
+  <script src='assets/scripts/analytics.js'></script>
+  <script src='assets/scripts/signup.js'></script>
 </html>

@@ -1,4 +1,4 @@
-$(".login, .signup").hide();
+$(".login, .signup, post-signup").hide();
 $(".login-btns").on("click", ".go-to-login-btn", function(){
   $(".login").show();
   $(".signup-or-login").hide();
@@ -46,7 +46,6 @@ function toggleSignIn() {
 function handleSignUp() {
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
-  var deviceID = document.getElementById('device-id').value;
   if (email.length < 4) {
     alert('Please enter an email address.');
     return;
@@ -69,12 +68,32 @@ function handleSignUp() {
     }
     // [END_EXCLUDE]
 
-  }).then(function(){
-    firebase.auth().currentUser.updateProfile({
-      deviceID: deviceID
-    })
-  });
-  // [END createwithemail]
+
+
+  })
+
+// [END createwithemail]
+
+}
+/**
+ * handles authorizing and registering user's device id and the code they were emailed
+ *
+ */
+
+function handlePostSignUp() {
+  var deviceId = document.getElementById('device-id').value;
+  var code = document.getElementById('code').value;
+  var user = firebase.auth().currentUser;
+  
+  if (authorizeCode(code)){
+    writeSecondaryUserData(user.uid, deviceId);
+    $(".post-signup").hide();
+    $(".quickstart-user-details-container").hide();
+    alert('Thanks for registering!');
+  } else {
+    alert('Code is not valid, please sign up for our kickstarter to receive one!');
+    return;
+  }
 
 }
 
@@ -91,9 +110,10 @@ function initApp() {
   // [START authstatelistener]
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
+
       // User is signed in.
-       $(".signup-or-login, .login, .signup").hide();
-      $("#leaderboard, .leaderboard-title").show();
+      $(".signup-or-login, .login, .signup").hide();
+      $(".post-signup").show();
       var displayName = user.displayName;
       var email = user.email;
       var emailVerified = user.emailVerified;
@@ -102,6 +122,8 @@ function initApp() {
       var uid = user.uid;
       var refreshToken = user.refreshToken;
       var providerData = user.providerData;
+
+      writeUserData(uid, email);
       // [START_EXCLUDE silent]
       document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
       document.getElementById('quickstart-sign-in').textContent = 'Sign out';
@@ -133,22 +155,6 @@ function initApp() {
 
   document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
   document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
+  document.getElementById('post-signup-submit').addEventListener('click', handlePostSignUp, false);
 }
-
-// 
-// if (user) {
-//   $(".signup-or-login, .login, .signup").hide();
-//   $("#leaderboard, .leaderboard-title").show();
-// } else {
-//   $(".login-btns").on("click", ".go-to-login-btn", function(){
-//     $(".login").show();
-//     $(".signup-or-login").hide();
-//   })
-//   $(".login-btns").on("click", ".go-to-signup-btn", function(){
-//     $(".signup").show();
-//     $(".signup-or-login").hide();
-//   })
-//   $("#leaderboard, .leaderboard-title").hide();// No user is signed in.
-// }
-
 
