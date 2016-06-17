@@ -125,6 +125,8 @@ function initApp() {
       $(".signup-or-login, .login, .signup").hide();
       if (!user.hasOwnProperty("codeEntered")) {
         $(".post-signup").show();
+      } else {
+        $(".leaderboard-title, #leaderboard").show();
       }
       var displayName = user.displayName;
       var email = user.email;
@@ -134,7 +136,7 @@ function initApp() {
       var uid = user.uid;
       var refreshToken = user.refreshToken;
       var providerData = user.providerData;
-      $(".leaderboard-title, #leaderboard").show();
+
       // [START_EXCLUDE silent]
       document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
       document.getElementById('quickstart-sign-in').textContent = 'Sign out';
@@ -153,9 +155,7 @@ function initApp() {
       // User is signed out.
       // [START_EXCLUDE silent]
       // $("#leaderboard, .leaderboard-title").hide();
-      document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
       document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-      document.getElementById('quickstart-account-details').textContent = 'null';
       // [END_EXCLUDE]
     }
     // [START_EXCLUDE silent]
