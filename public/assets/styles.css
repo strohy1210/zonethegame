@@ -107,6 +107,10 @@ body {
   padding-bottom: 2%;
 }
 
+.go-to-signup, .go-to-login {
+  padding: 1%;
+}
+
 @media only screen and (max-device-width: 480px) {
   /* define mobile specific styles come here */
   #leaderboard {

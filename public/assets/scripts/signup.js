@@ -1,4 +1,4 @@
-$(".login, .signup, .post-signup").hide();
+$(".login, .signup, .post-signup, .leaderboard-title, #leaderboard").hide();
 $(".login-btns").on("click", ".go-to-login-btn", function(){
   $(".login").show();
   $(".signup-or-login").hide();
@@ -134,8 +134,7 @@ function initApp() {
       var uid = user.uid;
       var refreshToken = user.refreshToken;
       var providerData = user.providerData;
-
-      // writeUserData(uid, email);
+      $(".leaderboard-title, #leaderboard").show();
       // [START_EXCLUDE silent]
       document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
       document.getElementById('quickstart-sign-in').textContent = 'Sign out';
