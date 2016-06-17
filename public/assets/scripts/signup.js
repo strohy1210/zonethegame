@@ -1,4 +1,6 @@
+
 $(".login, .signup, .post-signup, .leaderboard-title, #leaderboard").hide();
+// debugger;
 $(".login-btns").on("click", ".go-to-login-btn", function(){
   $(".login").show();
   $(".signup-or-login").hide();
@@ -15,6 +17,8 @@ $(".go-to-login").click(function(){
   $(".login").show();
   $(".signup-or-login, .signup").hide();
 })
+
+
 
 function toggleSignIn() {
   if (firebase.auth().currentUser) {
@@ -49,7 +53,7 @@ function toggleSignIn() {
     });
     // [END authwithemail]
   }
-  document.getElementById('quickstart-sign-in').disabled = true;
+  // document.getElementById('quickstart-sign-in').disabled = true;
 }
 
 function handleSignUp() {
@@ -77,9 +81,6 @@ function handleSignUp() {
       alert(error["message"]);
     }
     // [END_EXCLUDE]
-
-
-
   })
 
 // [END createwithemail]
@@ -98,8 +99,9 @@ function handlePostSignUp() {
   if (authorizeCode(code)){
     writeUserData(user.uid, deviceId);
     $(".post-signup").hide();
-    $(".quickstart-user-details-container").hide();
+    // $(".quickstart-user-details-container").hide();
     alert('Thanks for registering!');
+    $(".leaderboard-title, #leaderboard").show();
   } else {
     alert('Code is not valid, please sign up for our kickstarter to receive one!');
     return;
@@ -115,19 +117,29 @@ function handlePostSignUp() {
  *
  * When signed in, we also authenticate to the Firebase Realtime Database.
  */
-function initApp() {
+function initApp(user) {
   // Listening for auth state changes.
   // [START authstatelistener]
+
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-
       // User is signed in.
       $(".signup-or-login, .login, .signup").hide();
-      if (!user.hasOwnProperty("codeEntered")) {
-        $(".post-signup").show();
-      } else {
-        $(".leaderboard-title, #leaderboard").show();
-      }
+      firebase.database().ref('/users/' + user.uid).once('value').then(function(snapshot) {
+        if (snapshot.val()){
+          var codeEntered = snapshot.val().codeEntered;
+          if (!codeEntered) {
+            $(".post-signup").show();
+          } else {
+            $(".post-signup").hide();
+            $(".leaderboard-title, #leaderboard").show();
+          }
+        }else {
+          $(".post-signup").show();
+        }
+
+      });
+
       var displayName = user.displayName;
       var email = user.email;
       var emailVerified = user.emailVerified;
@@ -138,24 +150,21 @@ function initApp() {
       var providerData = user.providerData;
 
       // [START_EXCLUDE silent]
-      document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-      document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-      document.getElementById('quickstart-account-details').textContent = JSON.stringify({
-        displayName: displayName,
-        email: email,
-        emailVerified: emailVerified,
-        photoURL: photoURL,
-        isAnonymous: isAnonymous,
-        uid: uid,
-        refreshToken: refreshToken,
-        providerData: providerData
-      }, null, '  ');
+
+      // document.getElementById('quickstart-account-details').textContent = JSON.stringify({
+      //   displayName: displayName,
+      //   email: email,
+      //   emailVerified: emailVerified,
+      //   photoURL: photoURL,
+      //   isAnonymous: isAnonymous,
+      //   uid: uid,
+      //   refreshToken: refreshToken,
+      //   providerData: providerData
+      // }, null, '  ');
       // [END_EXCLUDE]
     } else {
       // User is signed out.
       // [START_EXCLUDE silent]
-      // $("#leaderboard, .leaderboard-title").hide();
-      document.getElementById('quickstart-sign-in').textContent = 'Sign in';
       // [END_EXCLUDE]
     }
     // [START_EXCLUDE silent]

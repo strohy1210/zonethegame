@@ -11,7 +11,7 @@ firebase.initializeApp(config);
 var usersRef = firebase.database().ref("users");
 
 
-var secretCode = "9Op240sK";
+var secretCode = "95p";
 
 function authorizeCode(code) {
   if (code === secretCode) {
@@ -21,11 +21,8 @@ function authorizeCode(code) {
   }
 }
 
-// function writeUserData(userId, email) {
-//   firebase.database().ref('users/' + userId).set({
-//     email: email
-//   });
-// }
+var user = firebase.auth().currentUser;
+
 
 function writeUserData(userId, deviceId) {
   firebase.database().ref('users/' + userId).set({
@@ -35,10 +32,6 @@ function writeUserData(userId, deviceId) {
   });
 }
  
-var user = firebase.auth().currentUser;
-
-
-
 function formatTime(seconds) {
 
   var date = new Date(null);
@@ -49,8 +42,6 @@ function formatTime(seconds) {
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-
-
 
 // usersRef.orderByChild("score").once("value", function(snap) { 
 
@@ -66,6 +57,8 @@ function numberWithCommas(x) {
 // // });
 
 window.onload = function() {
+
   initApp();
+
 };
 
