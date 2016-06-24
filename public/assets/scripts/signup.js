@@ -36,15 +36,19 @@ function toggleSignIn() {
 function handleSignUp() {
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
+  var passwordConfirm = document.getElementById('password-confirm').value;
   if (email.length < 4) {
-    alert('Please enter an email address.');
+    alert('Please enter a valid email address.');
     return;
   }
-  if (password.length < 4) {
-    alert('Please enter a password.');
+  if (password.length < 6) {
+    alert('Please enter a password of at least 6 characters.');
     return;
   }
-  // Sign in with email and pass.
+  if (password != passwordConfirm){
+    alert("Please make sure passwords are identical.");
+    return;
+  }
   // [START createwithemail]
   firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
     // Handle Errors here.
@@ -125,7 +129,6 @@ function initApp(user) {
       var uid = user.uid;
       var refreshToken = user.refreshToken;
       var providerData = user.providerData;
-
 
     } else {
       $(".signup-or-login").show();

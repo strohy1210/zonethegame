@@ -27,74 +27,72 @@
     </div>
 
 <!-- /  / / / / / / / / / /  Signup / / / / / / / / / / / / / / / / / -->
-    <div class="signup info-box mdl-layout mdl-js-layout mdl-layout--fixed-header col-md-6 col-md-offset-3">
+
+
+    <div class="signup info-box col-md-6 col-md-offset-3">
 
         <!-- Header section containing title -->
       <div class="dashboard-container col-md-10 col-md-offset-1">
-        <h1>Welcome to z0ne</h1>
-        <hr/>
-              <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                <p>Enter an email and password below to signup</p>
+      <h1>Welcome to z0ne</h1>
+      <hr/>
+            
+          <p>Enter an email and password (of 6 characters or more) below to signup</p>
 
-                <input class="mdl-textfield__input form-control"  type="text" id="email" name="email" placeholder="Email"/>
-                &nbsp;&nbsp;&nbsp;
-                <input class="mdl-textfield__input form-control"  type="password" id="password" name="password" placeholder="Password"/>
-                <br/><br/>
-                <button class="mdl-button mdl-js-button mdl-button--raised btn" id="quickstart-sign-up" name="signup">Sign Up</button></br>
+          <input class="form-control"  type="text" id="email" name="email" placeholder="Email"/>
+          &nbsp;&nbsp;&nbsp;
+          <input class="form-control"  type="password" id="password" name="password" placeholder="Password"/>
+          &nbsp;&nbsp;&nbsp;
+          <input class="form-control" type="password" id="password-confirm" name="password-confirm" placeholder="Confirm password"/>
+          <br/>
+          <button class="btn" id="quickstart-sign-up" name="signup">Sign Up</button></br>
 
-                <div class="go-to-login"><a href="#">Login</a></div>  
+          <div class="go-to-login"><a href="#">Login</a></div>  
 
-              </div>
-            </div>
-    
+        
       </div>
+  
+    </div>
 
 <!--  / / / / /   / / / /Login  / / / / / / / / /  -->
 
 
-      <div class="login info-box  mdl-layout mdl-js-layout mdl-layout--fixed-header col-md-6 col-md-offset-3">
+      <div class="login info-box col-md-6 col-md-offset-3">
 
         <!-- Header section containing title -->
         <div class="dashboard-container col-md-10 col-md-offset-1">
           <h1>Login</h1>
           <hr/>
 
-            <!-- Container for the demo -->
+      
+          <p>Already have an account? Enter an email and password below to sign in</p>
 
-              <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                <p>Already have an account? Enter an email and password below to sign in</p>
+          <input class="form-control" type="text" id="login-email" name="email" placeholder="Email"/>
+          &nbsp;&nbsp;&nbsp;
+          <input class="form-control" type="password" id="login-password" name="password" placeholder="Password"/>
+          <br/>
+          <button disabled class="btn" id="quickstart-sign-in" name="signin">Sign In</button><br>
+          <div class="go-to-signup"><a href="#">Sign up</a></div>        
 
-                <input class="mdl-textfield__input form-control" style="display:inline;width:auto;" type="text" id="login-email" name="email" placeholder="Email"/>
-                &nbsp;&nbsp;&nbsp;
-                <input class="mdl-textfield__input form-control" style="display:inline;width:auto;" type="password" id="login-password" name="password" placeholder="Password"/>
-                <br/><br/>
-                <button disabled class="mdl-button mdl-js-button mdl-button--raised btn" id="quickstart-sign-in" name="signin">Sign In</button><br>
-                <div class="go-to-signup"><a href="#">Sign up</a></div>        
-              </div>
-            </div>
+        </div>
 
-    
+  
       </div>
 
 
 <!--  / / / / /   / / / /Enter Device ID and Code / / / / / / / / /  -->
-    <div class="post-signup info-box  mdl-layout mdl-js-layout mdl-layout--fixed-header col-md-6 col-md-offset-3">
+    <div class="post-signup info-box col-md-6 col-md-offset-3">
 
         <!-- Header section containing title -->
       <div class="dashboard-container col-md-10 col-md-offset-1">
         <h1>Device Details</h1>
         <hr/>
             <!-- Container for the demo -->
-
-            <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-              <p>Enter your Device ID and Code (sent via email)</p>
-              <input class="mdl-textfield__input form-control"  type="device-id" id="device-id" name="device-id" placeholder="device-id"/>
-              &nbsp;&nbsp;&nbsp;
-              <input class="mdl-textfield__input form-control"  type="code" id="code" name="code" placeholder="code"/>
-              <br/><br/>
-              <button class="mdl-button mdl-js-button mdl-button--raised btn" id="post-signup-submit" name="submit">Submit</button>
-
-            </div>
+          <p>Enter your Device ID and Code (sent via email)</p>
+          <input class="form-control"  type="device-id" id="device-id" name="device-id" placeholder="device-id"/>
+          &nbsp;&nbsp;&nbsp;
+          <input class="form-control"  type="code" id="code" name="code" placeholder="code"/>
+          <br/><br/>
+          <button class="btn" id="post-signup-submit" name="submit">Submit</button>
 
           </div>
     
@@ -132,8 +130,7 @@
   <script src='assets/scripts/signup.js'></script>
   <script src='assets/scripts/app.js'></script>
   <script>
-    $(".login, .signup, .post-signup, .leaderboard-title, #leaderboard").hide();
-    // debugger;
+
     $(".login-btns").on("click", ".go-to-login-btn", function(){
       $(".login").show();
       $(".signup-or-login").hide();
