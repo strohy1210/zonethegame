@@ -111,6 +111,10 @@ body {
   padding: 1%;
 }
 
+.login, .signup, .post-signup, .leaderboard-title, #leaderboard, .signup-or-login {
+  display: none;
+}
+
 @media only screen and (max-device-width: 480px) {
   /* define mobile specific styles come here */
   #leaderboard {

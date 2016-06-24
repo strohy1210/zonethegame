@@ -55,10 +55,3 @@ function numberWithCommas(x) {
 //   }
 
 // // });
-
-window.onload = function() {
-
-  initApp();
-
-};
-

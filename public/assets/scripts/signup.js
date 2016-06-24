@@ -1,25 +1,3 @@
-
-$(".login, .signup, .post-signup, .leaderboard-title, #leaderboard").hide();
-// debugger;
-$(".login-btns").on("click", ".go-to-login-btn", function(){
-  $(".login").show();
-  $(".signup-or-login").hide();
-})
-$(".login-btns").on("click", ".go-to-signup-btn", function(){
-  $(".signup").show();
-  $(".signup-or-login, .login").hide();
-})
-$(".go-to-signup").click(function(){
-  $(".signup").show();
-  $(".signup-or-login, .login").hide();
-})
-$(".go-to-login").click(function(){
-  $(".login").show();
-  $(".signup-or-login, .signup").hide();
-})
-
-
-
 function toggleSignIn() {
   if (firebase.auth().currentUser) {
     // [START signout]
@@ -53,7 +31,6 @@ function toggleSignIn() {
     });
     // [END authwithemail]
   }
-  // document.getElementById('quickstart-sign-in').disabled = true;
 }
 
 function handleSignUp() {
@@ -149,23 +126,9 @@ function initApp(user) {
       var refreshToken = user.refreshToken;
       var providerData = user.providerData;
 
-      // [START_EXCLUDE silent]
 
-      // document.getElementById('quickstart-account-details').textContent = JSON.stringify({
-      //   displayName: displayName,
-      //   email: email,
-      //   emailVerified: emailVerified,
-      //   photoURL: photoURL,
-      //   isAnonymous: isAnonymous,
-      //   uid: uid,
-      //   refreshToken: refreshToken,
-      //   providerData: providerData
-      // }, null, '  ');
-      // [END_EXCLUDE]
     } else {
-      // User is signed out.
-      // [START_EXCLUDE silent]
-      // [END_EXCLUDE]
+      $(".signup-or-login").show();
     }
     // [START_EXCLUDE silent]
     document.getElementById('quickstart-sign-in').disabled = false;
@@ -177,4 +140,3 @@ function initApp(user) {
   document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
   document.getElementById('post-signup-submit').addEventListener('click', handlePostSignUp, false);
 }
-

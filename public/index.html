@@ -4,10 +4,7 @@
     <link rel="stylesheet" type="text/css" href="assets/styles.css">
     <title>z0ne</title>
     <link rel="shortcut icon" href="assets/favicon.ico" />
-    <!-- // <script src="https://fb.me/react-15.0.1.min.js"></script> -->
-    <!-- // <script src="https://fb.me/react-dom-15.0.1.min.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-    <!-- // <script src="https://cdn.firebase.com/libs/reactfire/1.0.0/reactfire.min.js"></script> -->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
     <script src="assets/scripts/underscore.js"></script>
 
@@ -133,4 +130,26 @@
   </body>
   <script src='assets/scripts/analytics.js'></script>
   <script src='assets/scripts/signup.js'></script>
+  <script src='assets/scripts/app.js'></script>
+  <script>
+    $(".login, .signup, .post-signup, .leaderboard-title, #leaderboard").hide();
+    // debugger;
+    $(".login-btns").on("click", ".go-to-login-btn", function(){
+      $(".login").show();
+      $(".signup-or-login").hide();
+    })
+    $(".login-btns").on("click", ".go-to-signup-btn", function(){
+      $(".signup").show();
+      $(".signup-or-login, .login").hide();
+    })
+    $(".go-to-signup").click(function(){
+      $(".signup").show();
+      $(".signup-or-login, .login").hide();
+    })
+    $(".go-to-login").click(function(){
+      $(".login").show();
+      $(".signup-or-login, .signup").hide();
+    })
+
+  </script>
 </html>
